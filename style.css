@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    /*COLORS*/
+    --cyan: hsl(179, 62%, 43%);
+    --cyan-secondary: hsl(179, 64%, 46%);
+    --bright-yellow: hsl(71, 73%, 54%);
+
+    --light-gray: hsl(204, 43%, 93%);
+    --light-blue: hsl(203, 59%, 82%);
+    --grayish-blue: hsl(218, 22%, 67%);
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   
+}
+
+main {
+    width: 375px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.container {
+    width: 85%;
+    box-shadow: 0 0 200px var(--light-blue),
+                0 20px 20px  rgba(152, 166, 189, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .box{
+    width: 100%;
+    min-height: 15rem;
+    padding: auto;
+}
+
+.container .box .text h1 {
+    font-size: 1.25rem;
+}
+
+.container .text {
+    padding: 1.25rem;
+}
+
+/* FIRST CONTAINER */
+
+.container .info {
+    padding-bottom: 1rem;
+}
+
+.container .info .text h1 {
+    color: var(--cyan);
+}
+
+.container .info .text h2 {
+    color: var(--bright-yellow);
+    font-size: 1rem;
+    margin: 1.5rem 0;
+}
+
+.container .info .text p {
+    color: var(--grayish-blue);
+    font-size: 0.875rem;
+    line-height: 1.75rem;
+    margin-top: -0.25rem;
+}
+
+/* SECOND CONTAINER*/
+
+.container .price {
+    background-color: var(--cyan);
+    color: var(--light-gray);
+}
+
+.container .price .text .plan {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.container .price .text .plan p{
+    display: inline;
+    line-height: 250%;
+}
+
+.container .price .text .plan #value {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.container .price .text .plan #month {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.container .price .text h2 {
+    font-weight: 400;
+    font-size: 1rem;
+    margin-top: -0.75rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.container .price button {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 3rem;
+    color: var(--light-gray);
+    background-color: var(--bright-yellow);
+    border: none;
+    border-radius: 4px;
+    font-family: 'Karla', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    box-shadow: 0 6px 6px rgba(102, 155, 155, 0.8);
+}
+
+.container .price .text span#month {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+/* THIRD CONTAINER*/
+.container .explanation {
+    background-color: var(--cyan-secondary);
+    color: var(--light-gray);
+}
+
+.container .explanation .text h1 {
+    margin-top: 0.5rem;
+}
+
+.container .explanation .text ul {
+    margin-top: 1.25rem;
+}
+
+.container .explanation .text ul li  {
+    line-height: 145%;
+    list-style-type: none;
+    font-size: 0.93rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+@media only screen and (min-width: 1440px) {
+ 
+    main {
+        width: 40.625rem;
+        height: 500px;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-areas: 'a1 a1'
+                             'a2 a3';
+        grid-template-rows:  auto auto;
+        grid-template-columns: auto;
+    }
+
+    .container .text {
+        padding: 2.5rem;
+    }
+    
+    .container .info {
+        height: 230px;
+    }
+
+    .container .info .text h1 {
+        font-size: 1.5rem;
+    }
+    
+    .container .info .text h2 {
+        font-size: 1.2rem;
+    }
+
+    .container .info .text p {
+        font-size: 1rem;
+    }
+
+    .container .price, 
+    .container .explanation {
+        width: 325px;
+        height: 270px;
+    }
+
+    .container .explanation .text {
+        margin-top: -0.5rem;
+    }
+
+    .container .info {
+        grid-area: a1;
+    }
+
+    .container .price {
+        grid-area: a2;
+    }
+
+    .container .explanation {
+        grid-area: a3;
+    }
+}
